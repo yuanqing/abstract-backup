@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 const sade = require('sade')
-const abstractDownload = require('./abstract-download')
+const abstractBackup = require('./abstract-backup')
 
-sade('abstract-download', true)
+sade('abstract-backup', true)
   .option('-t, --token', 'Access token')
   .option('-o, --output', 'Output directory')
   .action(async function ({ output, token }) {
-    await abstractDownload(output, token)
+    await abstractBackup(output, token)
   })
   .parse(process.argv)

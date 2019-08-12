@@ -5,8 +5,8 @@ const { join } = require('path')
 const sanitizeFilename = require('sanitize-filename')
 const AbstractApiClient = require('./abstract-api-client')
 
-async function abstractDownload (
-  outputDirectory = './abstract-download',
+async function abstractBackup (
+  outputDirectory = './abstract-backup',
   accessToken = process.env.ABSTRACT_TOKEN
 ) {
   if (typeof accessToken === 'undefined') {
@@ -17,10 +17,10 @@ async function abstractDownload (
   const client = new AbstractApiClient(accessToken)
   log.start('Retrieving projects...')
   const projects = await client.retrieveProjects()
-  await pEachSeries(projects, async function ({
-    id: projectId,
-    name: projectName
-  }, index) {
+  await pEachSeries(projects, async function (
+    { id: projectId, name: projectName },
+    index
+  ) {
     log.info(`${projectName} (${index + 1} of ${projects.length})`)
     const directory = join(outputDirectory, sanitizeFilename(projectName))
     await ensureDir(directory)
@@ -39,13 +39,11 @@ async function abstractDownload (
         downloadedFileCount++
         log.succeed(filename)
         const remaining = files.length - downloadedFileCount
-        log.start(
-          `${remaining} more file${remaining === 1 ? '' : 's'}...`
-        )
+        log.start(`${remaining} more file${remaining === 1 ? '' : 's'}...`)
       })
     )
     log.stop()
   })
 }
 
-module.exports = abstractDownload
+module.exports = abstractBackup

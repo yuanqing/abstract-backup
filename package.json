@@ -1,21 +1,21 @@
 {
-  "name": "abstract-download",
+  "name": "abstract-backup",
   "version": "0.0.0",
   "description": "Download the Sketch files from all your Abstract projects",
   "author": "Lim Yuan Qing",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/yuanqing/abstract-download.git"
+    "url": "git://github.com/yuanqing/abstract-backup.git"
   },
   "bin": {
-    "abstract-download": "src/cli.js"
+    "abstract-backup": "src/cli.js"
   },
   "files": [
     "src"
   ],
   "scripts": {
-    "clean": "rimraf '*.log' abstract-download",
+    "clean": "rimraf '*.log' abstract-backup",
     "fix": "prettier-standard 'src/**/*.js'",
     "lint": "standard 'src/**/*.js'",
     "start": "node src/cli.js"

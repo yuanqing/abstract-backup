@@ -1,4 +1,4 @@
-# abstract-download [![npm Version](https://img.shields.io/npm/v/abstract-download)](https://www.npmjs.org/package/abstract-download) [![Build Status](https://img.shields.io/travis/yuanqing/abstract-download.svg)](https://travis-ci.org/yuanqing/abstract-download)
+# abstract-backup [![npm Version](https://img.shields.io/npm/v/abstract-backup)](https://www.npmjs.org/package/abstract-backup) [![Build Status](https://img.shields.io/travis/yuanqing/abstract-backup.svg)](https://travis-ci.org/yuanqing/abstract-backup)
 
 > Download the Sketch files from all your [Abstract](https://www.abstract.com/) projects
 
@@ -11,7 +11,7 @@ _Requires [Node.js](https://nodejs.org/)._
 3. Execute the below command, where `<token>` is your access token.
 
     ```sh
-    $ npx abstract-download --token <token>
+    $ npx abstract-backup --token <token>
     ```
 
 ## Usage
@@ -19,7 +19,7 @@ _Requires [Node.js](https://nodejs.org/)._
 ```
 
   Usage
-    $ abstract-download [options]
+    $ abstract-backup [options]
 
   Options
     -t, --token      Access token
@@ -32,7 +32,7 @@ _Requires [Node.js](https://nodejs.org/)._
 ## Installation
 
 ```sh
-$ npm install --global abstract-download
+$ npm install --global abstract-backup
 ```
 
 ## License
