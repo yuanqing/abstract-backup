@@ -33,7 +33,11 @@ async function abstractDownload (
     await Promise.all(
       files.map(async function ({ id: fileId, name, type }) {
         const filename = join(directory, sanitizeFilename(`${name}.${type}`))
-        await client.downloadFile(projectId, fileId, filename)
+        try {
+          await client.downloadFile(projectId, fileId, filename)
+        } catch (error) {
+          log.error(`Download failed: "${filename}"`)
+        }
         count++
         log.succeed(`File: "${filename}"`)
         const remaining = files.length - count
