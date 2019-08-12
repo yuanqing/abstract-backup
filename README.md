@@ -1,6 +1,6 @@
 # abstract-download [![npm Version](https://img.shields.io/npm/v/abstract-download)](https://www.npmjs.org/package/abstract-download) [![Build Status](https://img.shields.io/travis/yuanqing/abstract-download.svg)](https://travis-ci.org/yuanqing/abstract-download)
 
-> Download all Sketch files from all your [Abstract](https://www.abstract.com/) projects
+> Download the Sketch files from all your [Abstract](https://www.abstract.com/) projects
 
 ## Quick start
 

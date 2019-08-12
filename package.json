@@ -1,7 +1,7 @@
 {
   "name": "abstract-download",
   "version": "0.0.0",
-  "description": "Download all Sketch files from all your Abstract projects",
+  "description": "Download the Sketch files from all your Abstract projects",
   "author": "Lim Yuan Qing",
   "license": "MIT",
   "repository": {
