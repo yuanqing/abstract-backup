@@ -11,6 +11,9 @@
   "bin": {
     "abstract-download": "src/cli.js"
   },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "clean": "rimraf '*.log' abstract-download",
     "fix": "prettier-standard 'src/**/*.js'",
