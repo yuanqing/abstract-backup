@@ -18,7 +18,7 @@ async function abstractDownload (
   log.start('Retrieving projects...')
   const projects = await client.retrieveProjects()
   log.succeed(`Retrieved ${projects.length} projects`)
-  await pEachSeries([projects[0]], async function ({
+  await pEachSeries(projects, async function ({
     id: projectId,
     name: projectName
   }) {
