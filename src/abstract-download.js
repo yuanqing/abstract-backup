@@ -17,36 +17,34 @@ async function abstractDownload (
   const client = new AbstractApiClient(accessToken)
   log.start('Retrieving projects...')
   const projects = await client.retrieveProjects()
-  log.succeed(`Retrieved ${projects.length} projects`)
   await pEachSeries(projects, async function ({
     id: projectId,
     name: projectName
-  }) {
-    log.info(`Project: "${projectName}"`)
-    log.start('Retrieving files...')
+  }, index) {
+    log.info(`${projectName} (${index + 1} of ${projects.length})`)
     const directory = join(outputDirectory, sanitizeFilename(projectName))
     await ensureDir(directory)
     const files = await client.retrieveFiles(projectId)
-    log.succeed(`Retrieved ${files.length} files`)
     log.start(`Downloading ${files.length} files...`)
-    let count = 0
+    let downloadedFileCount = 0
     await Promise.all(
       files.map(async function ({ id: fileId, name, type }) {
-        const filename = join(directory, sanitizeFilename(`${name}.${type}`))
+        const filename = sanitizeFilename(`${name}.${type}`)
+        const path = join(directory, filename)
         try {
-          await client.downloadFile(projectId, fileId, filename)
+          await client.downloadFile(projectId, fileId, path)
         } catch (error) {
-          log.error(`Download failed: "${filename}"`)
+          log.fail(`Failed: "${filename}"`)
         }
-        count++
-        log.succeed(`File: "${filename}"`)
-        const remaining = files.length - count
+        downloadedFileCount++
+        log.succeed(filename)
+        const remaining = files.length - downloadedFileCount
         log.start(
-          `Downloading ${remaining} file${remaining === 1 ? '' : 's'}...`
+          `${remaining} more file${remaining === 1 ? '' : 's'}...`
         )
       })
     )
-    log.succeed(`Downloaded ${files.length} files`)
+    log.stop()
   })
 }
 
