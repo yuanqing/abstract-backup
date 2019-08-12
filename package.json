@@ -1,0 +1,34 @@
+{
+  "name": "abstract-download",
+  "version": "0.0.0",
+  "description": "Download all Sketch files from Abstract",
+  "author": "Lim Yuan Qing",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanqing/abstract-download.git"
+  },
+  "bin": {
+    "abstract-download": "src/cli.js"
+  },
+  "scripts": {
+    "clean": "rimraf '*.log' abstract-download",
+    "fix": "prettier-standard 'src/**/*.js'",
+    "lint": "standard 'src/**/*.js'",
+    "start": "node src/cli.js"
+  },
+  "dependencies": {
+    "abstract-sdk": "^1.9.0",
+    "fs-extra": "^8.1.0",
+    "limiter": "^1.1.4",
+    "ora": "^3.4.0",
+    "p-each-series": "^2.1.0",
+    "sade": "^1.6.1",
+    "sanitize-filename": "^1.6.2"
+  },
+  "devDependencies": {
+    "prettier-standard": "^9.1.1",
+    "rimraf": "^2.6.3",
+    "standard": "^13.1.0"
+  }
+}
