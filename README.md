@@ -6,12 +6,13 @@
 
 _Requires [Node.js](https://nodejs.org/)._
 
-1. [Ensure that all projects have been set to sync to your computer.](https://www.abstract.com/help/projects/sync-project/#how-to-sync-a-project-to-your-computer)
-2. [Create an access token for the Abstract API.](https://app.goabstract.com/account/tokens)
-3. Execute the below command, where `<token>` is your access token.
+1. [Ensure that you have the Abstract desktop app installed,](https://www.abstract.com/help/getting-started/#2-download-the-macos-app) and you are logged in.
+2. [Set all projects to sync to your computer.](https://www.abstract.com/help/projects/sync-project/#how-to-sync-a-project-to-your-computer)
+3. [Create an access token for the Abstract API.](https://app.goabstract.com/account/tokens)
+4. Execute the below command, where `[token]` is your access token.
 
     ```sh
-    $ npx abstract-backup --token <token>
+    $ npx abstract-backup [token]
     ```
 
 ## Usage
@@ -19,13 +20,12 @@ _Requires [Node.js](https://nodejs.org/)._
 ```
 
   Usage
-    $ abstract-backup [options]
+    $ abstract-backup [token] [options]
 
   Options
-    -t, --token      Access token
-    -o, --output     Output directory
-    -v, --version    Displays current version
-    -h, --help       Displays this message
+    -d, --directory    Directory to save your Sketch files
+    -v, --version      Displays current version
+    -h, --help         Displays this message
 
 ```
 
