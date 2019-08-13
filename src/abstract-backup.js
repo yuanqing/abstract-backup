@@ -6,8 +6,8 @@ const sanitizeFilename = require('sanitize-filename')
 const AbstractApiClient = require('./abstract-api-client')
 
 async function abstractBackup (
-  outputDirectory = './abstract-backup',
-  accessToken = process.env.ABSTRACT_TOKEN
+  accessToken = process.env.ABSTRACT_TOKEN,
+  outputDirectory = './abstract-backup'
 ) {
   if (typeof accessToken === 'undefined') {
     throw new Error('Need an access token')
