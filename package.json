@@ -1,6 +1,6 @@
 {
   "name": "abstract-backup",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Download a local backup of the Sketch files from all your Abstract projects",
   "author": "Lim Yuan Qing",
   "license": "MIT",
