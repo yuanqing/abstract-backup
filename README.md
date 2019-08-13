@@ -19,14 +19,18 @@ _Requires [Node.js](https://nodejs.org/)._
     $ npx abstract-backup <token>
     ```
 
-    Alternatively, do:
+    Alternatively:
 
     ```sh
     $ export ABSTRACT_TOKEN=<token>
     $ npx abstract-backup
     ```
 
-4. `abstract-backup` will download and write all your Sketch files to an `./abstract-backup` folder. Change this via the `--directory` flag.
+4. `abstract-backup` will download and write all your Sketch files, organised by project, to an `./abstract-backup` folder. Change this via the `--directory` flag:
+
+    ```sh
+    $ npx abstract-backup --directory sketch
+    ```
 
 ## Installation
 
