@@ -1,6 +1,6 @@
 # abstract-backup [![npm Version](https://img.shields.io/npm/v/abstract-backup)](https://www.npmjs.org/package/abstract-backup) [![Build Status](https://img.shields.io/travis/yuanqing/abstract-backup.svg)](https://travis-ci.org/yuanqing/abstract-backup)
 
-> Download the Sketch files from all your [Abstract](https://www.abstract.com/) projects
+> Create a local backup of the Sketch files from all your [Abstract](https://www.abstract.com/) projects
 
 ## Quick start
 
