@@ -15,6 +15,8 @@ _Requires [Node.js](https://nodejs.org/)._
     $ npx abstract-backup [token]
     ```
 
+    `abstract-backup` will try to use the `ABSTRACT_TOKEN` environmental variable if `[token]` is omitted.
+
 ## Usage
 
 ```
